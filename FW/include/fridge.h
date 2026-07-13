@@ -32,7 +32,7 @@ private:
     bool open;
     bool previousOpen;
 
-    unsigned long openedAt;
+    unsigned long openedTimestamp;
 
     Defcon defcon;
 };
