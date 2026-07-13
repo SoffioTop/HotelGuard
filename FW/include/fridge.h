@@ -25,6 +25,8 @@ public:
 
     unsigned long getOpenDuration() const;
 
+    unsigned long getOpenedTimestamp() const;
+
 private:
 
     uint8_t pin;
