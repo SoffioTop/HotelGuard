@@ -21,14 +21,25 @@ void Alarm::begin()
 
 void Alarm::update(Defcon currentDefcon)
 {
-    activeDefcon = currentDefcon;
-
-    if (activeDefcon == Defcon::Emergency)
+    // Se il livello è cambiato, lo memorizziamo.
+    // In futuro qui cambieremo il pattern del buzzer.
+    if (currentDefcon != activeDefcon)
     {
-        digitalWrite(pin, HIGH);
+        activeDefcon = currentDefcon;
     }
-    else
+
+    switch (activeDefcon)
     {
-        digitalWrite(pin, LOW);
+        case Defcon::Emergency:
+            digitalWrite(pin, HIGH);
+            break;
+
+        case Defcon::Alarm:
+        case Defcon::Warning:
+        case Defcon::Notice:
+        case Defcon::Normal:
+        default:
+            digitalWrite(pin, LOW);
+            break;
     }
 }
