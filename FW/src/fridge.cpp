@@ -66,3 +66,8 @@ unsigned long Fridge::getOpenDuration() const
 
     return millis() - openedTimestamp;
 }
+
+unsigned long Fridge::getOpenedTimestamp() const
+{
+    return openedTimestamp;
+}
