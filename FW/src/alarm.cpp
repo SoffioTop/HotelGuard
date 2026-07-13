@@ -11,6 +11,7 @@ Alarm::Alarm(uint8_t pin)
 {
     this->pin = pin;
     activeDefcon = Defcon::Normal;
+    activeFridge = -1;
 }
 
 void Alarm::begin()
