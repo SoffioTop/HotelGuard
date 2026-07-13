@@ -4,8 +4,7 @@
 #include "fridge.h"
 #include "alarm.h"
 
-Fridge fridge1(PIN_FRIDGE_1);
-Fridge fridge2(PIN_FRIDGE_2);
+Fridge fridges[MAX_FRIDGES];
 
 Alarm alarm(PIN_BUZZER);
 
