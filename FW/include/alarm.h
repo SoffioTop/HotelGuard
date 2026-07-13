@@ -9,6 +9,7 @@
 
 #include <Arduino.h>
 #include "defcon.h"
+#include "fridge.h"
 
 class Alarm
 {
@@ -18,11 +19,13 @@ public:
 
     void begin();
 
-    void update(Defcon currentDefcon);
+    void update(Fridge fridges[], uint8_t count);
 
 private:
 
     uint8_t pin;
 
     Defcon activeDefcon;
+
+    int activeFridge;
 };
